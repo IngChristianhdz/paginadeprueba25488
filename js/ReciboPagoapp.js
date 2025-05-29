@@ -1,143 +1,82 @@
 $(document).ready(function() {
-
-          
     console.log('jQuery is Working');
     $('#task-result').hide();
     fetchTasks();
     fetchTasksM();
-
-    consumotask();
-    $('#search').keyup(function(e) {
-       if($('#search').val()){
-        let search = [$('#search').val(),$('#taskCorreo').val()];
-             $.ajax({
-            url: 'conexion/task-search.php',
-            type: 'POST',
-            data: { search },
-            success: function(response) {
-               let tasks = JSON.parse(response);
-               let template = '';
-               tasks.forEach(task => {
-                    template += `<li> 
-                        ${task.name}  ${task.description}  ${task.pagolinea}
-                    </li>`;
-               });
-
-               $('#container').html(template);
-               $('#task-result').show();
-            }
-        });
-
-       }
+    //consumotask();
+    
+    $('#search').keyup(function (e) {
+        const query = $('#search').val();
+        if (query) {
+            const search = [query, $('#taskCorreo').val()];
+            $.ajax({
+                url: 'conexion/task-search.php',
+                type: 'POST',
+                data: { search },
+                success: function (response) {
+                    const tasks = JSON.parse(response);
+                    let template = '';
+                    tasks.forEach(task => {
+                        template += `<li>${task.name} - ${task.description} - ${task.pagolinea}</li>`;
+                    });
+                    $('#container').html(template);
+                    $('#task-result').show();
+                },
+                error: function () {
+                    console.error('Error en búsqueda');
+                }
+            });
+        }
     });
    
-    $('#task-form').submit(function(e){
+      // Guardar tarea
+    $('#task-form').submit(function (e) {
+        e.preventDefault();
         const postData = {
             name: $('#name').val(),
             description: $('#description').val(),
             id: $('#taskId').val()
         };
-        let url ='conexion/task-edit.php';
-        $.post(url, postData, function (response){
-           fetchTasks();
+        $.post('conexion/task-edit.php', postData, function () {
+            fetchTasks();
             $('#task-form').trigger('reset');
         });
-        e.preventDefault();
     });
-        
+     
+   function consumotask() {
+    const consumo = $('#taskHist').val();
+    renderChart(consumo); // Reutilizamos la misma función
+}
 
-    function consumotask(){
-        consumo = $('#taskHist').val();
-            console.log(consumo);
-            y=Array();
-            x=Array();
-            for (var i = 0; i < 12; i++) {   
-                y[i]= consumo.substring((5*i)+1,(5*i)+5) ;
-                x[i]= consumo.substring(59+(3*i)+1,59+(3*i)+4) ;
-             }
-            
-            var trace1 = {
-                type: 'bar',
-                x,
-                y,
-                marker: {
-                    color: '#4cade6',
-                    line: {
-                        width: 1
-                    }
-                }
-              };
-              
-              var data = [ trace1 ];
-              var layout = { 
-                title: 'Hist贸rico de consumo',
-                height: 400,
-                font: {size: 11},
-                plot_bgcolor: 'rgb(227,246,250)',
-                margin: {pad:10},
-                xaxis:{
-                    title: 'mes de consumo',
-                    titlefont:{
-                        color: 'black',
-                        size:8
-                    },
-                    rangemode:'tozero'
-                },
-                yaxis:{
-                    title: 'consumo m3',
-                    titlefont:{
-                        color:'black',
-                        size:8
-                    },
-                    rangemode:'tozero'
-                }
-              };
-              
-              var config = {responsive: true}
-              
-              Plotly.newPlot('myDiv', data, layout, config );
-
-    }
+ 
 
     function fetchTasks(){
         $.ajax({
             url: 'conexion/task-list.php',
-            type: 'GET',
-            success: function(response) {
-                let tasks = JSON.parse(response);
+             type: 'GET',
+            success: function (response) {
+                const tasks = JSON.parse(response);
                 let template = '';
-                let template1 = '';
                 tasks.forEach(task => {
-                    template1 = '';
-                    $('#taskHist').val(task.consumo);
-                     if (task.total>=1){
-                      
-                        template1=' <button class="task-pagar btn btn-primary" id="pagar">  Pagar  </button>'; 
-                    }
-
-                    template +=`
-                    <tr taskId="${task.id}">
-                        <td ><h6>${task.id}</h6></td>
-                        <td ><h6>${task.vence}</h6></td>
-                        <td > <h6> ${task.total} </h6> </td>
-                        <td><h6>${task.estatus}</h6></td>
-                        <td>
-                        ${template1}                           
-                        </td>            
-                        <td>
-                            <button class="task-delete btn btn-danger">
-                                Eliminar
-                            </button>
-                        </td>                        
-                        <td>
-                            <button class="task-item btn btn-info">
-                               Consumo
-                            </button>
-                        </td>
-                    </tr>
-                    `
+                   // $('#taskHist').val(task.consumo); // Para gráfico inicial
+                    const pagarBtn = task.total >= 1 ? `<button class="task-pagar btn btn-primary">Pagar</button>` : '';
+                    template += `
+                        <tr taskId="${task.id}">
+                            <td><h6>${task.id}</h6></td>
+                            <td><h6>${task.vence}</h6></td>
+                            <td><h6>${task.total}</h6></td>
+                            <td><h6>${task.estatus}</h6></td>
+                            <td>${pagarBtn}</td>
+                            <td><button class="task-delete btn btn-danger">Eliminar</button></td>
+                            <td><button class="task-item btn btn-info">Consumo</button></td>
+                        </tr>
+                    `;
                 });
                 $('#tasks').html(template);
+                //renderChart($('#taskHist').val()); // Mostrar gráfico inicial
+            },
+            error: function () {
+                console.error('Error al obtener tareas');
             }
         });
     }
@@ -168,108 +107,36 @@ $(document).ready(function() {
 
     $(document).on('click', '.task-delete', function() {
         if (confirm('Esta Seguro de Eliminar esta cuenta ?')){
-            let element = $(this)[0].parentElement.parentElement;
-            let id = $(element).attr('taskId');
-
-             $.post('conexion/task-delete.php', {id}, function(response) {
-            fetchTasks();
-            })
+             const id = $(this).closest('tr').attr('taskId');
+            $.post('conexion/task-delete.php', { id }, function () {
+                fetchTasks();
+            });
         }
-    })
-
-    $(document).on('click','.task-item', function(){
-    
-        let element = $(this)[0].parentElement.parentElement;
-        let id = $(element).attr('taskId');
-        let consumo;
-        $.post('conexion/task-single.php', {id} , function(response) {
-            const task = JSON.parse(response);
-            $('#name').val(task.name);
-            $('#description').val(task.description);
-            $('#taskId').val(task.id);
-            $('#taskHist').val(task.consumo);
-            consumo = $('#taskHist').val();
-            console.log(consumo);
-            y=Array();           
-            x=Array();
-            for (var i = 0; i < 12; i++) {    
-                y[i]= consumo.substring((5*i)+1,(5*i)+5) ;
-                x[i]= consumo.substring(59+(3*i)+1,59+(3*i)+4) ;
-             }
-            var trace1 = {
-                type: 'bar',
-                 x,
-                 y,
-                marker: {
-                    color: '#4cade6',
-                    line: {
-                        width: 1
-                    }
-                }
-              };
-              
-              var data = [ trace1 ];
-              var layout = { 
-                title: 'Historico de consumo',
-                height: 400,
-                font: {size: 11},
-                plot_bgcolor: 'rgb(227,246,250)',
-                margin: {pad:10},
-                xaxis:{
-                    title: 'mes de consumo',
-                    titlefont:{
-                        color: 'black',
-                        size:8
-                    },
-                    rangemode:'tozero'
-                },
-                yaxis:{
-                    title: 'consumo m3',
-                    titlefont:{
-                        color:'black',
-                        size:8
-                    },
-                    rangemode:'tozero'
-                }
-              };
-              
-              var config = {responsive: true}
-              
-              Plotly.newPlot('myDiv', data, layout, config );
-
-        })
-
-
-
-    })
-
-
-    $(document).on('click', '.task-pagar', function() {
-      let element = $(this)[0].parentElement.parentElement;
-        let id = $(element).attr('taskId');
-        let element1 = $(this)[0].parentElement.parentElement;
-        let adeudo = $(element1).attr('taskvence');
-        console.log(element1);
-        let web='ConfirmarPago.php?cuenta2=';
-        var res = web.concat(id);
-        adeudo=0;
-     
-            if (confirm("Acepta los terminos y condiciones para inicar el proceso de pago en Linea?")){
-                location.href= res;
-                $('#pagar').hide();  
-              }
-             $('#pagar').show();        
-           
-    })
+    });
 
    
+
+ $(document).on('click', '.task-pagar', function () {
+        const id = $(this).closest('tr').attr('taskId');
+        const url = `ConfirmarPago.php?cuenta2=${id}`;
+        if (confirm("¿Acepta los terminos y condiciones para iniciar el proceso de pago en linea?")) {
+            window.location.href = url;
+            $('#pagar').hide();
+        }
+        $('#pagar').show();
+    });
+
+
+    
+    
+    
+
     $(document).on('click', '#cerrar', function() {
        if (confirm("Se cerrara la sesi贸n, desea continuar?")){
                location.href="cerrar.php";                
-              }       
-         
-     })
-
-
-
+              } 
+            
+            })
+             
+     
 });

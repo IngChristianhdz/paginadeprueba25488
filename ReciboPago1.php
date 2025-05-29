@@ -20,7 +20,7 @@
     //   $correo1=$_SESSION["Correo1S"];  
     // $idUser = $_POST['name'];
      $_SESSION["Cuenta"]=('#name');  
-    //  echo "Hola mundo";
+     echo "Hola mundo";
   ?>
 
 </head>

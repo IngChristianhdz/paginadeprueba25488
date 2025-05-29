@@ -1,85 +1,65 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>JUMAPAC</title>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-	</head>
-        <body>
-     <?php    
-        include('conexion/database.php');
-        $correo = $_POST['txtcorreo'];
-        $contra = $_POST['txtpass'];
+<?php
+session_start();
 
-        $usuario = new mysqli($hostname_usuario, $username_usuario, $password_usuario, $database_usuario);
-        $conector=0;
-        if ($usuario->connect_error) {
-            die("Connection fallida: " . $conn->connect_error);
-
-        }else{
-              
-
-        $result =  mysqli_query($usuario,"SELECT Correo, Contrasena, Nombre, Perfil FROM registro  where Correo = '$correo' AND Contrasena='$contra'" );
-
-        $perfil=$row['Perfil'];       
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+set_error_handler("var_dump");
 
 
-         if (mysqli_num_rows($result) > 0|| $perfil == 'User') {
-            $row= $result->fetch_assoc();  
-            $nombre=$row['Nombre'];        
-            $result =  mysqli_query($usuario,"SELECT * FROM usuario  where correo = '$correo' ");
-            if (mysqli_num_rows($result) > 0) {   
-                if(!isset( $_SESSION['Correo1S'])){
-                    $result11="INSERT INTO `AccesoWeb` (`idAccesoWeb`, `correo`, `fecha`, `observacion`) VALUES (NULL, '$correo', CURRENT_TIMESTAMP, 'Acceso_Valido')";
-                    $result =  mysqli_query($connection ,$result11);
-                  }            
-                session_start();
-                $_SESSION["Correo1S"]=$correo;
+// Requiere conexión a la base de datos
+require_once('conexion/database.php');
 
+// Validar existencia de los campos
+if (!isset($_POST['txtcorreo']) || !isset($_POST['txtpass'])) {
+    die("Faltan datos del formulario.");
+}
 
+$correo = trim($_POST['txtcorreo']);
+$contra = trim($_POST['txtpass']);
 
-                header("location:ReciboPago.php") ;
-             }
+// Crear conexión
+$conexion = new mysqli($server['ip'], $username_usuario, $password_usuario, $database_usuario);
 
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
 
-             }else if ($correo== 'admin@admin.com') {
-                
-                 $row= $result->fetch_assoc();  
-                //  $idUser = $_POST['name'];
-                //  echo $idUser;
-                //  echo("<script>console.log('PHP: " . $idUser . "');</script>");
-                    
-                 $result =  mysqli_query($usuario,"SELECT * FROM usuario  where id = '$id' ");
-                // if (mysqli_num_rows($result) > 0) {   
-                //     if(!isset( $_SESSION['Correo1S'])){
-                //         $result11="INSERT INTO `AccesoWeb` (`idAccesoWeb`, `correo`, `fecha`, `observacion`) VALUES (NULL, '$correo', CURRENT_TIMESTAMP, 'Acceso_Valido')";
-                //         $result =  mysqli_query($connection ,$result11);
-                //       }            
-                     session_start();
-                //   $_SESSION["Correo1S"]=$correo;    
-                     header("location:ReciboPago1.php") ;
-                //  }
-    
-    
-                 }else {     
-                    if(!isset( $_SESSION['Correo1S'])){
-                    $result11="INSERT INTO `AccesoWeb` (`idAccesoWeb`, `correo`, `fecha`, `observacion`) VALUES (NULL, '$correo', CURRENT_TIMESTAMP, 'Error_Invalido')";
-                    $result =  mysqli_query($connection ,$result11);
-                  }
-                  header("location:cuenta.php") ; } 
-        } 
+// Preparar consulta segura
+$stmt = $conexion->prepare("SELECT Correo, Contrasena, Nombre, Perfil FROM registro WHERE Correo = ? AND Contrasena = ?");
+$stmt->bind_param("ss", $correo, $contra);
+$stmt->execute();
+$result = $stmt->get_result();
 
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
 
+    // Guardar acceso válido
+    $insert = $conexion->prepare("INSERT INTO AccesoWeb (correo, fecha, observacion) VALUES (?, CURRENT_TIMESTAMP, 'Acceso_Valido')");
+    $insert->bind_param("s", $correo);
+    $insert->execute();
 
-        mysqli_close($usuario);
-    ?>
+    $_SESSION["Correo1S"] = $correo;
 
-	
+    if ($correo == 'admin@admin.com') {
+        
+        header("Location: https://jumapac.gob.mx/ReciboPago1.php");
+        
+    } else {
+        
+        header("Location: https://jumapac.gob.mx/ReciboPago.php");
+    }
+    exit;
 
-	    
-  
-	
-	</body>
-</html>	
+} else {
+    // Acceso inválido
+    $insert = $conexion->prepare("INSERT INTO AccesoWeb (correo, fecha, observacion) VALUES (?, CURRENT_TIMESTAMP, 'Error_Invalido')");
+    $insert->bind_param("s", $correo);
+    $insert->execute();
+
+    header("Location: https://jumapac.gob.mx/cuenta.php");
+    exit;
+}
+
+$conexion->close();
+?>

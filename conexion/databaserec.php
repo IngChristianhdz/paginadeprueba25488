@@ -1,8 +1,8 @@
 <?php
-$server['ip']= "127.0.0.1";
+$server['ip']= "69.162.80.186";
 
-$database_usuario = "pkkvmhzyzr";
-$username_usuario = "pkkvmhzyzr";
+$database_usuario = "jumapacg_pkkvmhzyzr";
+$username_usuario = "jumapacg_pkkvmhzyzr";
 $password_usuario = "wJbYZTCA8c";
 $connection = mysqli_connect(
     $server['ip'],
