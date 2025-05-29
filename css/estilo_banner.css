@@ -1,0 +1,13 @@
+#banner .contenedor{
+    
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 98%;
+    
+}
+
+
+#banner .contenedor img{
+    margin: auto;
+    width: 100%;
+}

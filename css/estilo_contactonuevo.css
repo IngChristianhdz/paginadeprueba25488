@@ -1,0 +1,123 @@
+body{
+    font-family: 'Oswald', sans-serif;
+    }
+
+.contenedor{
+    margin:auto;
+    width: 70%;
+    align-items: center;
+    font-family: sans-serif;
+   }
+
+ .contenedor select{
+    align-items: center;
+    font-size: 1em;
+    background:rgba(51,153,255,0.1);
+    border: 1px solid rgba(51,153,255,0.3); 
+    border-radius: 10px;
+ }  
+
+#mensaje{
+    width: 500px;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 30 px;
+    padding: 20px;
+    box-shadow: 0 0 20px 1px rgba(51,104,255,0.7);
+    position: relative;
+}
+
+.formulario__titulo1{
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: rgba(51, 59, 255, 0.96);
+}
+
+.formulario__titulo{
+    text-align: center;
+    font-size: 1.3em;
+    margin: auto;
+    border-radius: 5px;
+    color: rgba(51,104,255,0.7);
+}
+
+.formulario__input,.formulario__label,.formulario__submit{
+    display: block;
+    margin: auto;
+    width: 90%;
+    font-size: 1.1em;
+}
+
+.adjuntos{
+    margin: auto;
+    margin-left: 10%;
+    width: 80%;
+    padding: 12px;
+    background:rgba(51,153,255,0.1);
+    border: 1px solid rgba(51,153,255,0.3);
+    border-radius: 10px;
+    margin-bottom: 10px; 
+    font-size: 0.8em;
+}
+
+.formulario__input{
+    padding: 12px;
+    background:rgba(51,153,255,0.1);
+    border: 1px solid rgba(51,153,255,0.3);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.formulario__label{
+    padding-left:30px;
+    padding-bottom: 5px;
+    position: absolute;
+    color: rgba(51,153,255,0.5);
+   }
+
+.formulario__submit{
+    background:rgba(51,104,255,0.7);
+    border-radius: 15px;
+    color: white;
+    width: 50%;
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+
+#msj, .form-control{
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 60px;
+    padding: 5 px;
+    box-sizing: border-box;
+    font-size:30 px;
+    border: none;
+}
+
+#msj{
+    border: 2px solid rgba(51,153,255,0.3);
+    border-radius: 10px;
+    min-height:100px;
+    max-height:200px;
+    max-width: 100%;
+}
+
+.g-recaptcha{
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 21%;
+    padding: 5 px;
+    box-sizing: border-box;
+    font-size:30 px;
+    border: none;
+}
+
+.error{
+    color: red;
+}

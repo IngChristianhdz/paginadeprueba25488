@@ -1,0 +1,40 @@
+table, td, th{
+    border:0;
+}
+
+table{
+    max-width:100%; 
+    width:50%; 
+   
+}
+
+thead{
+    background-color: rgba(58,60,225,.7);
+    text-align: left;
+    padding: 15px;
+    color:black;
+    width:50%;
+    margin-top:50px; 
+}
+
+tbody th{
+     text-align:center;
+     background-color: rgb(113,148,255);
+     color:black;
+}
+
+tbody td{
+     background-color: rgb(210,211,255);
+     color:black;
+}
+
+div.centrartabla{
+    position:relative;
+    left:25%;
+    right:10%;
+    width: 100%
+   }
+
+div.centrartabla tbody{
+     text-align: left;
+}

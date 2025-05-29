@@ -1,0 +1,39 @@
+/*@import url(estilo_index.css);*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+footer {
+  
+    width: auto;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #FDAE32;
+    color: #fff;
+    border: 10px solid #fff;
+}
+
+footer a{
+    color: #fff;
+    
+}
+
+.icono{
+    width: 20%;
+}
+
+section .direccion{
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.frame {
+   padding: 5px;
+   text-align: center;    
+}

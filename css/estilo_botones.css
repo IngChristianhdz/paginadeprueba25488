@@ -1,0 +1,171 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#botones{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/*boton1*/
+
+.acceso1 {
+    padding: 10px;
+    width: 15%;
+}
+
+.acceso1 a {
+   display: block;
+    background: #1E449C;
+    border: 2px solid #fff;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.acceso1 a:hover{
+    background: #206AC7;
+    color:#fff;
+    border: 2px solid #fff;
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+/*boton2*/
+
+.acceso2 {
+    padding: 10px;
+    width: 15%;
+}
+
+.acceso2 a {
+    display: block;
+    padding: 10px;
+    background: #6ED12E;
+    border: 2px solid #fff;
+    border-radius: 10px 10px 10px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.acceso2 a:hover{
+    background: #57B41C;
+    color:#fff;
+    border: 2px solid #fff;
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+/*boton3*/
+
+.acceso3 {
+    padding: 10px;
+    width: 15%;
+}
+
+.acceso3 a {
+    display: block;
+    padding: 10px;
+    background: #C14ED3;
+    border: 2px solid #fff;
+    border-radius: 10px 10px 10px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.acceso3 a:hover{
+    background: #9919AD;
+    color:#fff;
+    border: 2px solid #fff;
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+/*boton4*/
+
+.acceso4 {
+    padding: 10px;
+    width: 15%;
+}
+
+.acceso4 a {
+    display: block;
+    padding: 10px;
+    background: #F5AC34;
+    border: 2px solid #fff;
+    border-radius: 10px 10px 10px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.acceso4 a:hover{
+    background: #DE8007;
+    color:#fff;
+    border: 2px solid #fff;
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+@media(max-width:1300px){
+    #botones{
+        width: auto;
+    }
+    .acceso1 a{
+    font-size: 0.9em;
+        padding: 5px;
+        width: 90%;
+    }
+    
+    .acceso2 a{
+    font-size: 0.9em;
+        padding: 5px;
+        width: 90%;
+    }
+    .acceso3 a{
+    font-size: 0.9em;
+        padding: 5px;
+        width: 90%;
+    }
+    .acceso4 a{
+    font-size: 0.9em;
+        padding: 5px;
+        width: 90%;
+    }
+}
+
+@media(max-width:900px){
+    #botones{
+        width: auto;
+    }
+    .acceso1 a{
+    font-size: 0.7em;
+        padding: 2px;
+        width: 90%;
+    }
+    
+    .acceso2 a{
+    font-size: 0.7em;
+        padding: 2px;
+        width: 90%;
+    }
+    .acceso3 a{
+    font-size: 0.7em;
+        padding: 2px;
+        width: 90%;
+    }
+    .acceso4 a{
+    font-size: 0.7em;
+        padding: 2px;
+        width: 90%;
+    }
+}

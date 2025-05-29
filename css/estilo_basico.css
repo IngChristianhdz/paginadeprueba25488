@@ -1,0 +1,122 @@
+#imagen .div img{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 80%;
+    height: 60%;
+    
+}
+
+#texto .integrantes h1{
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;;
+  text-transform: uppercase;
+  display: block;
+  font-size: 92px;
+  color: #f1ebe5;
+  text-shadow: 0 8px 9px #466ee3, 0px -2px 1px #fff;
+  font-weight: bold;
+  letter-spacing: -4px;
+  text-align: center;
+  position: relative;
+  margin-top: 15%;
+  margin: auto;
+  transform: translate(-50%,-50%);
+  border-radius: 20px;
+  left: 50%;
+   
+}
+
+#texto .integrantes ul{
+   margin: auto;
+   list-style-image: url("https://jumapac.gob.mx/imagenes/gota2.jpg");
+   text-align: left;
+   font-size: 35px;
+   font-weight: bold;
+   width: 80%;
+   
+}
+
+#mision .div img{
+   margin-top: 20px;
+   margin-bottom: 40px;
+   width: 80%;
+   height: 50%; 
+}
+
+#mision .texto p{
+    margin: auto; 
+    width: 80%;
+    text-align: justify;
+    font-size: 25px;
+    padding-bottom: 3%;
+   }
+
+#vision .div2 img{
+   margin-top: 20px;
+   margin-bottom: 40px;
+   width: 80%;
+   height: 60%; 
+}
+
+#vision .texto2 p{
+    margin: auto; 
+    width: 80%;
+    text-align: justify;
+    font-size: 25px;
+    padding-bottom: 3%;
+    }
+
+#valores .div3 img{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    align-content: center;
+    width: 80%;
+    height: 50%;  
+}
+
+#jumapac .div4 img{
+    align-content: center;
+    width: 80%;
+    height: 50%;  
+}
+
+#jumapac .texto3 p{
+    text-align: justify;
+    margin: auto;
+    padding: 15px;
+    font-size: 30px;
+    width: 80%;
+    height: 60%;  
+}
+
+.lista{
+  list-style-image: url("https://jumapac.gob.mx/imagenes/gota2.jpg");
+  margin-top: 3%;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 3%;
+  font-size: 25px;
+  text-align: left;
+}
+
+.construccion img{
+  width: 60%;
+  height: 60%;
+  margin: auto;
+  padding: auto;
+}
+
+.botonregistrar img{
+  width: 60%;
+  height: 60%;
+  margin: auto;
+  padding: auto;
+  border-radius: 15px;
+}
+
+.botonregistrar2 img{
+  width: 60%;
+  height: 40%;
+  margin: auto;
+  padding: auto;
+  border-radius: 15px;
+}

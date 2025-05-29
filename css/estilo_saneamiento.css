@@ -1,0 +1,135 @@
+main{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-sherif;
+}
+
+.cuerpo{
+  width: 80%;
+  margin: auto;
+  padding: auto;
+}
+
+.cuerpoDescargas{
+  width: 80%;
+  margin: 30px;
+  padding: 30px;
+}
+
+.p1 #a{
+  font-size: 40px;
+  font-weight: bold;
+  color: blue;  
+  text-align: justify;
+    
+}
+
+.p1:first-letter, .p2:first-letter, .p3:first-letter, .p4:first-letter, .p5:first-letter, .p6:first-letter, .p7:first-letter, .p8:first-letter,.p9:first-letter, .p10:first-letter {
+    margin-left: 50px;
+   }
+
+.p1, .p2, .p3,.p4,.p5, .p6, .p7, .p8, .p9, .p10{
+   text-align: justify; 
+   padding: 10px 0 10px 0;
+   font-size: 18px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+   margin-left: 30px;  
+   margin-right: 30px;    
+}
+
+.p5{
+   clear: both;
+}
+
+.p8{
+    clear: both;
+}
+
+.p9{
+    width: 60%;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.img1{
+    float: right;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 20%;
+    height:20%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 4px rgba(51,104,255,0.7);
+}
+
+.img2{
+    width: 90%;
+    display:block;
+    margin:auto;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 4px rgba(51,104,255,0.7);
+}
+
+.img3 {
+    float: left;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 25%;
+    height:25%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 4px rgba(51,104,255,0.7);
+}
+
+.img5{
+     position: relative;
+     width: 15%;
+     height:25%; 
+     border-radius: 10px;
+     box-shadow: 0 0 25px 4px rgba(51,104,255,0.7);
+}
+
+.img4{
+    position: relative;
+    width: 25%;
+    height:25%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 4px rgba(51,104,255,0.7);
+  }
+
+
+.fila{
+   margin: auto;
+   width:80%; 
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+}
+
+.lista{
+  list-style-image: url("https://jumapac.gob.mx/imagenes/gota2.jpg");
+  margin-top: 5%;
+  margin-left: 40%;
+  font-size: 18px;
+  text-align: left;
+}
+
+.lista2{
+  list-style-image: url("https://jumapac.gob.mx/imagenes/gota2.jpg");
+  margin:auto;
+  text-align: left;
+  font-size: 18px;
+}
+
+.lista3{
+  margin:auto;
+  text-align: left;
+  font-size: 18px;
+}
+

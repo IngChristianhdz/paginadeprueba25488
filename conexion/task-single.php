@@ -1,0 +1,29 @@
+<?php
+
+
+include('database.php');
+
+    $id = $_POST['id'];
+    $query = "SELECT * FROM usuario WHERE id = $id";
+    $result = mysqli_query($connection, $query);
+    if(!$result){
+        die('Query Error');     
+     }  
+     $json = array();    
+
+
+    while($row = mysqli_fetch_array($result)) {
+
+
+         $json[]=array(
+         'name' => $row['cuenta'],
+         'description' => $row['reparto'],
+         'consumo' => $row['consumoh'],
+         'id' => $row['cuenta']
+         );          
+    } 
+    $jsonstring = json_encode($json[0]);
+     echo $jsonstring;              
+
+
+?>
