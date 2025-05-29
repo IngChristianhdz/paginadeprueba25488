@@ -50,36 +50,60 @@ $(document).ready(function() {
 
  
 
-    function fetchTasks(){
-        $.ajax({
-            url: 'conexion/task-list.php',
-             type: 'GET',
-            success: function (response) {
-                const tasks = JSON.parse(response);
+    function fetchTasks() {
+    $.ajax({
+        url: 'conexion/task-list.php',
+        type: 'GET',
+        success: function(response) {
+            try {
+                // Eliminar el prefijo "Consumo" si existe
+                const jsonStart = response.indexOf('[');
+                const jsonString = jsonStart >= 0 ? response.substring(jsonStart) : response;
+                
+                const tasks = JSON.parse(jsonString);
+                
+                if (!Array.isArray(tasks)) {
+                    throw new Error("La respuesta no es un array");
+                }
+
                 let template = '';
                 tasks.forEach(task => {
-                   // $('#taskHist').val(task.consumo); // Para gr¨¢fico inicial
-                    const pagarBtn = task.total >= 1 ? `<button class="task-pagar btn btn-primary">Pagar</button>` : '';
+                    const consumo = task.consumo || '';
+                    $('#taskHist').val(consumo);
+                    
+                    const pagarBtn = parseFloat(task.total || 0) >= 1 ? 
+                        `<button class="task-pagar btn btn-primary">Pagar</button>` : '';
+                    
                     template += `
-                        <tr taskId="${task.id}">
-                            <td><h6>${task.id}</h6></td>
-                            <td><h6>${task.vence}</h6></td>
-                            <td><h6>${task.total}</h6></td>
-                            <td><h6>${task.estatus}</h6></td>
+                        <tr taskId="${task.id || ''}">
+                            <td>${task.id || 'N/A'}</td>
+                            <td>${task.vence || 'N/A'}</td>
+                            <td>${task.total || '0'}</td>
+                            <td>${task.estatus || 'N/A'}</td>
                             <td>${pagarBtn}</td>
                             <td><button class="task-delete btn btn-danger">Eliminar</button></td>
                             <td><button class="task-item btn btn-info">Consumo</button></td>
                         </tr>
                     `;
                 });
+                
                 $('#tasks').html(template);
-                //renderChart($('#taskHist').val()); // Mostrar gr¨¢fico inicial
-            },
-            error: function () {
-                console.error('Error al obtener tareas');
+                
+                // Solo renderizar gr¨¢fico si hay datos v¨¢lidos
+                if (tasks.length > 0 && tasks[0].consumo) {
+                    renderChart(tasks[0].consumo);
+                }
+            } catch (e) {
+                console.error("Error procesando respuesta:", e);
+                console.error("Respuesta completa:", response);
             }
-        });
-    }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error en la petici¨®n:', status, error);
+            console.error('Respuesta:', xhr.responseText);
+        }
+    });
+}
 
     function fetchTasksM(){
         $.ajax({
@@ -125,6 +149,8 @@ $(document).ready(function() {
         }
         $('#pagar').show();
     });
+    
+    
 
 
     
@@ -137,6 +163,69 @@ $(document).ready(function() {
               } 
             
             })
-             
+            
+            function testWithSampleData() {
+    const sampleData = [{
+        vence: "09/05/2025",
+        total: 0,
+        estatus: "PAGO REALIZADO",
+        id: "TEST123",
+        consumo: "0010203040506070809101112" // datos de ejemplo
+    }];
+    
+    let template = '';
+    sampleData.forEach(task => {
+        template += `<tr>...`; // tu template aqu¨ª
+    });
+    $('#tasks').html(template);
+    renderChart(sampleData[0].consumo);
+}
+            
+    function renderChart(consumo) {
+    // Limpiar el gr¨¢fico existente primero
+    Plotly.purge('myDiv');
+    
+    if (!consumo || consumo.length < 10) { // Ajustado el m¨ªnimo requerido
+        console.warn("Datos de consumo insuficientes o inv¨¢lidos");
+        return;
+    }
+
+    const y = [], x = [];
+    try {
+        for (let i = 0; i < 12; i++) {
+            const yVal = parseFloat(consumo.substring((5 * i) + 1, (5 * i) + 5));
+            const xVal = consumo.substring(59 + (3 * i) + 1, 59 + (3 * i) + 4);
+            
+            if (!isNaN(yVal)) {
+                y.push(yVal);
+                x.push(xVal || `M${i+1}`);
+            }
+        }
+    } catch (e) {
+        console.error("Error procesando datos de consumo:", e);
+        return;
+    }
+
+    if (y.length === 0) {
+        console.warn("No se encontraron valores num¨¦ricos v¨¢lidos");
+        return;
+    }
+
+    const trace1 = {
+        type: 'bar',
+        x: x,
+        y: y,
+        marker: {
+            color: '#4cade6',
+            line: { width: 1 }
+        }
+    };
+
+    Plotly.newPlot('myDiv', [trace1], {
+        title: 'Hist¨®rico de consumo',
+        height: 400,
+        font: { size: 11 }
+    }, { responsive: true });
+}
      
 });

@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 // Validar que la sesi¨®n exista antes de continuar
 if (!isset($_SESSION["Correo1S"])) {
-    header("Location: https://jumapac.gob.mx/ReciboPago.php");
+    header("Location: ReciboPago.php");
     exit;
 }
 
@@ -40,40 +40,42 @@ $correo1 = htmlspecialchars($_SESSION["Correo1S"]);
     </ul>
 </nav>
 
-<div class="container p-4">
+<div class="container" p-4> 
     <div class="row">
-        <div class="col-md-4">
-            <div class="card my-2">
-                <div class="card-body">
-                    <form id="task-form">
-                        <input type="hidden" id="taskId">
-                        <input type="hidden" id="taskHist">
-
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Cuenta" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <input id="description" class="form-control" placeholder="Reparto">
-                            <a class="icon-question" href="imagenes/Guia recibo.jpg" target="_blank"></a>
-                        </div>
-
-                        <button type="submit" class="btn btn-success btn-block text-center">Guardar</button>
-                    </form>
-                </div>
-
-                <div class="card my-1" id="enlaces_int">
-                    <div class="enlaces">
-                        <a href="TerminosyCondiciones.pdf" target="_blank">
-                            <img src="imagenes/ICONO_TERMINOSYCONDICIONES.png">
-                        </a>
-                        <a href="AVISO DE PRIVACIDAD PARA WEB.pdf" target="_blank">
-                            <img src="imagenes/ICONOAVISODEPRIVACIDAD.png">
-                        </a>
+        <div class="col-md-4">      
+            <div class="card my-10">
+                    <div class="card-body"> 
                     </div>
-                </div>
-            </div>
-        </div>
+                    <div class="card-body">
+                        <form id="task-form">
+                            <input type="hidden" id = "taskId">
+                            <div  class="form-group"> <input type="hidden" id = "taskHis"> </div>
+                            
+                            <div class="form-group"> 
+                                <input type="text" id="name" placeholder="Cuenta" class="form-control"> 
+                            </div>
+                            
+                            <div class="form-group">
+                                <input  id="description" class="form-control1" placeholder="Reparto"><a class="icon-question" href="imagenes/Guia recibo.jpg" target="_blank"></a>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block text-center">
+                                Guardar  
+                            </button>
+                            <form action="" class="group"></form>
+                        </form>                        
+                    </div>  
+                    
+                    <div class="card my-1" id="enlaces_int">
+                        <div class= "enlaces">              
+                          <a href="T¨¦rminosyCondiciones.pdf" target="_blank"&nbsp;&nbsp;&nbsp;&nbsp;><img src="imagenes/ICONO_TERMINOSYCONDICIONES.png"> </a>  <a href="AVISO DE PRIVACIDAD PARA WEB.pdf" target="_blank"><img src="imagenes/ICONOAVISODEPRIVACIDAD.png"> </a> 
+                        </div> 
+                    </div>
+                        
+            </div> 
+            
+          
+
+    </div>
 
         <div class="col-md-8">
             <div class="card my-1" id="task-result">

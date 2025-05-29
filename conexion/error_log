@@ -7786,3 +7786,119 @@ Stack trace:
 [29-May-2025 07:10:25 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
 [29-May-2025 07:11:38 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
 [29-May-2025 07:11:42 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 08:47:36 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 08:47:36 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 08:49:26 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 08:49:26 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 08:50:05 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 08:50:05 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 09:42:35 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 09:42:36 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 09:42:36 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 09:42:36 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 09:42:37 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:12:36 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:12:36 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:12:38 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:12:39 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:12:39 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:12:40 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:12:41 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:12:42 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:15:46 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:15:47 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:15:48 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:15:49 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 10:15:56 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 11:11:01 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 11:11:32 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 11:12:39 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 11:23:15 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 11:23:15 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 11:24:20 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 11:24:20 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 11:24:28 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 11:24:28 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 11:25:25 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 11:25:25 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 11:27:08 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 11:27:08 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 11:28:31 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 11:28:31 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 12:52:42 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:52:42 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:52:44 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:52:44 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:52:44 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:52:45 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:53:01 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:57:23 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:57:23 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:57:23 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:57:24 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:59:05 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:59:26 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:59:26 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:59:26 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:59:29 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:59:30 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 12:59:33 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:00:37 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:00:38 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:00:40 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:00:40 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:14:42 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:14:42 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:14:45 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:14:45 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:14:48 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:14:49 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:14:49 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 13:20:46 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 14:16:38 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 14:16:38 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 14:24:54 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 14:24:54 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 14:25:47 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 14:38:25 America/Mexico_City] PHP Warning:  Undefined array key "contra2" in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 21
+[29-May-2025 14:38:25 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "result" in /home/jumapacg/public_html/conexion/agregar_usuario.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/jumapacg/public_html/conexion/agregar_usuario.php on line 32
+[29-May-2025 15:09:46 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 15:09:47 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 15:09:47 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
+[29-May-2025 15:09:47 America/Mexico_City] PHP Warning:  Array to string conversion in /home/jumapacg/public_html/conexion/task-search.php on line 11
