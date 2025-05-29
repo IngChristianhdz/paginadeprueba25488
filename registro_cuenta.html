@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+        <title>JUMAPAC</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="js/all.js"></script>
+        
+        <link rel="shortcut icon" type="image/png" href="https://www.jumapac.gob.mx/imagenes/LJ.png">
+        <link rel="stylesheet" href="css/estilo_index.css">
+        <link rel="stylesheet" href="css/estilo_menu.css">
+        <link rel="stylesheet" href="css/estilo_piepag.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        
+
+    </head>
+    
+    <body>
+    
+ 	  <!--menu-->
+	<header>
+      
+          <img class="logo" src="imagenes/logo_transparente.png" alt="" width="50px" height="50px">
+          <input type="checkbox" id="btn-menu">
+          <label class="icon-menu" for="btn-menu"></label>
+          <nav class="menu">
+              <ul>
+                
+                  <li><a href="index.html">INICIO</a></li>
+                  <li class="submenu"><a href="cuenta.php">PAGO</a>
+                  </li>
+                  <li class="submenu"><a href="institucionalidad.html">¿QUIENES SOMOS?</a>
+                  </li>
+                  <li class="submenu"><a href="tramites_servicios.html">TRAMITES Y SERVICIOS</a>
+                  </li>
+                  <li class="submenu"><a href="cultura.html">CULTURA DEL AGUA</a>
+                  </li>
+                  <li class="submenu"><a href="saneamiento.html">SANEAMIENTO</a>
+                  </li>
+                  <li class="submenu"><a href="transparencia.html">TRANSPARENCIA</a>
+                  </li>
+              </ul>
+          </nav>
+    </header>
+	
+   
+                          
+   <main>
+   <div class="contenido">
+       <div class="header">
+          <h1> REGISTRO DE USUARIOS </h1>
+          <div>
+            <form  id="form"  class="form"  action="" method="post">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" onblur="javascrip:revisar();" placeholder="Ingresa tu nombre completo">
+                          
+                <label for="domicilio">Domicilio</label><br>
+                <input type="text" id="domicilio" onblur="javascrip:revisar();" placeholder="Ingresa calle y numero/colonia">
+                            
+                <label for="sexo">Sexo</label>
+                <input type="text" id="sexo"  onblur="js/revisar();" placeholder="Masculino/Femenino">
+                            
+                <label for="ciudad">Ciudad</label>
+                <input type="text" id="ciudad" onblur="js/revisar();">
+              
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" onblur="js/revisar();" placeholder="Guanajuato, Qro, etc">
+                           
+                <label for="celular">Num. de Celular</label>
+                <input type="text" id="celular" onblur="js/revisar();" placeholder="999-9999999">
+                              
+                <label for="cuenta">Numero de Cuenta</label>
+                <input type="text" id="cuenta" onblur="js/revisar();" placeholder="Esta en tu recibo de agua">
+                              
+                <label for="reparto">Reparto</label>
+                <input type="text" id="reparto" onblur="js/revisar();" placeholder="Introduce el numero sin guiones, espacio ni puntos">
+                             
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" onblur="js/revisar();" placeholder="jumapac@jumapac.com">
+                             
+                <label for="contra">Contraseña</label>
+                <input type="password" id="contra" onblur="js/revisar();">
+                            
+                <label for="contra2">Confirmar Contraseña</label>
+                <input type="password" id="contra2" onblur="js/revisar();">
+               
+                <label for="pregunta">Pregunta Secreta</label>
+                <input type="text" id="pregunta" onblur="js/revisar();">
+                            
+                <label for="respuesta">Respuesta</label>
+                <input type="text" id="respuesta" onblur="js/revisar();">
+              
+                <input id="boton" type="submit" name="registrar" value="Enviar Datos">
+                    
+            </form>
+             </div>
+        </div>
+   </div> 
+
+      <div class="alert">
+                <small id="small">Mensaje de error</small><br>
+       </div>  
+     <script src="js/main.js"></script>
+   
+   </main>
+      
+     <!-- direccion-->
+      
+      <section>
+          <div class="direccion">
+                  <p> Calzada Ing. Antonio Madrazo #600, Zona Centro, C.P. 38300 Cortazar Gto. </p>
+                  <p>Tel: (411) 155-0050</p>
+              </div>
+      </section>
+      
+      <!-- pie de pagina-->
+      
+      <footer>
+          <div>
+              <div class="nombre">
+                  <p>JUMAPAC CORTAZAR     
+                  <a class="icon-facebook-squared" href="https://www.facebook.com/JuntaMunicipaldeAguaPotableyAlcantarillado/" target="_blank"></a>
+                  <a class="icon-twitter-squared" href="https://twitter.com/jumapac" target="_blank"></a>
+                  <a class="icon-instagram" href="https://www.instagram.com/jumapac_cortazar_/" target="_blank"></a>   
+                  www.jumapac.gob.mx
+                  </p>
+              </div>
+           </div>
+     </footer>
+    
+
+    </body>
+    
+    
+</html>

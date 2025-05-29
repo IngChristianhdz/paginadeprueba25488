@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<P>
+  <business>
+    <id_company>SNBX</id_company>
+    <id_branch>01SNBXBRNCH</id_branch>
+    <user>SNBXUSR01</user>
+    <pwd>SECRETO</pwd>
+  </business>
+  <url>
+    <reference>099998</reference>
+    <amount>70</amount>
+    <moneda>MXN</moneda>
+    <canal>W</canal>
+    <omitir_notif_default>1</omitir_notif_default>
+    <promociones>C</promociones>
+    <st_correo>1</st_correo>
+    <fh_vigencia>21/06/2020</fh_vigencia>
+    <mail_cliente>prueba@prueba.com</mail_cliente>
+    <datos_adicionales>
+      <data display="true" id="1">
+        <label>Servicio</label>
+        <value>Recibo</value>
+      </data>
+      <data display="true" id="2">
+        <label>Servicio</label>
+        <value>Vario</value>
+      </data>
+    </datos_adicionales>
+  </url>
+</P>

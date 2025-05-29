@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>JUMAPAC</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        
+        <link rel="shortcut icon" type="image/png" href="https://www.jumapac.gob.mx/imagenes/LJ.png">
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="stylesheet" href="css/estilo_menu.css">
+        <link rel="stylesheet" href="css/estilo_banner.css">
+        <link rel="stylesheet" href="css/estilo_contactonuevo.css">
+        <link rel="stylesheet" href="css/estilo_piepag.css">
+        <link rel="stylesheet" href="css/estilo_botones.css">		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script> <link rel="stylesheet" type="text/css" href="css/sweetalert2.css">
+		
+       <script type="text/javascript" src="js/modernizr.custom.46884.js"/></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+       
+        <script src="js/menu.js"></script>
+		
+	</head>
+	
+	<body>
+	
+ 	   <!--menu-->
+	<header>
+      
+          <img class="logo" src="imagenes/logo_transparente.png" alt="" width="50px" height="50px">
+          <input type="checkbox" id="btn-menu">
+          <label class="icon-menu" for="btn-menu"></label>
+          <nav class="menu">
+              <ul>
+                
+                  <li><a href="index.html">INICIO</a></li>
+                  <li class="submenu"><a href="cuenta.php">PAGO</a>
+                  </li>
+                  <li class="submenu"><a href="institucionalidad.html">¿QUIENES SOMOS?</a>
+                  </li>
+                  <li class="submenu"><a href="tramites_servicios.html">TRAMITES Y SERVICIOS</a>
+                  </li>
+                  <li class="submenu"><a href="cultura.html">CULTURA DEL AGUA</a>
+                  </li>
+                  <li class="submenu"><a href="saneamiento.html">SANEAMIENTO</a>
+                  </li>
+                  <li class="submenu"><a href="transparencia.html">TRANSPARENCIA</a>
+                  </li>
+              </ul>
+          </nav>
+    </header>
+	
+    <!--contenido-->
+    <main>
+    
+    <!--banner-->        
+        <section id="banner">
+               <div class="contenedor">
+                   <img id="logo" src="imagenes/encabezados/sistemadeatencionbanner.png" alt="">
+               </div>
+        </section>
+            
+
+    <section id="label_sup">
+           <div class="contenedor">
+             <h2 class="formulario__titulo1"> ATENCIÓN A USUARIOS</h2>
+           </div>
+        
+    </section>
+    
+    <!--contenido-->
+     <section id="contenido">
+         <div class="contenedor">
+             <form enctype="multipart/form-data" id="mensaje"  action="contact_me.php" method="post"  onsubmit="return revisar();">
+                
+                <h3 class="formulario__titulo"> Por favor introduce los datos solicitados</h3>
+                
+                <br>
+                <label class="formulario__label">Nombre</label>
+                <br>
+                <input class="formulario__input" type="text" id="name" name="name" required="">
+                <br>
+                <label class="formulario__label">Correo</label>
+                <br>
+                <input class="formulario__input" type="email" id="email" name="email" required="">
+                <br>
+                <label class="formulario__label">Teléfono</label>
+                <br>
+                <input class="formulario__input" title="El numero debe contener 10 digitos" type="numero" id="phone" name="phone">
+                <br>
+                <label class="formulario__label">Número de cuenta</label>
+                <br>
+                <input class="formulario__input" title="Se encuentra en la parte superior izquierda de tu recibo" type="numero" id="count" name="count" required="">
+                <br>
+                <label class="formulario__label">Asunto</label>   
+                <br>
+                 <select class="form-control"  id="subject"  name="subject" required data-validation-required-message="Elige el asunto">
+                      <option value="" disabled selected> Selecciona una opcion</option>
+                      <option>Reporte de fuga</option>
+                      <option>Solicitud de informacion</option>
+                      <option>Agendar cita</option>
+                      <option>Denuncia ciudadana</option>
+                 </select>
+                 <br>
+                <label class="formulario__label">Comentario</label>
+                <br>
+                <textarea id="msj" name="msj" required=""></textarea>
+                <br>
+                <input class="adjuntos" type="file" id="archivo" name="archivo">
+                <br>
+                <div id="g-recaptcha" class="g-recaptcha" name="g-recaptcha-response" data-sitekey="6LfWJtAZAAAAAMSU8gSvrksga6DtTUeVW9zRLl9F"></div>
+                <div><input type="hidden" name="Bn" id="Bn"> </div>
+                <input class="formulario__submit" name="enviar" type="submit" class="btn btn-primary" value="ENVIAR" id="enviar" >                
+	         </form>
+                <script src="js/revisar.js"></script>
+              </div>
+     </section>
+     
+<!--
+     botones
+     <section id="botones">
+          
+               <div class="acceso1">
+                  <a href="cuenta.html">PAGA TU RECIBO</a>
+                </div>
+                <div class="acceso2">
+                  <a href="cuenta.html">CONSULTA TU SALDO</a>
+                </div>
+                <div class="acceso3">
+                  <a href="cuenta.html">HISTORIAL</a>
+                </div>
+                <div class="acceso4">
+                  <a href="cuenta.html">REPORTE</a>
+                </div>   
+      </section>
+-->
+      
+      
+    </main>
+    
+	<!-- direccion-->
+      
+      <section>
+          <div class="direccion">
+                  <p> Calzada Ing. Antonio Madrazo #600, Zona Centro, C.P. 38300 Cortazar Gto. </p>
+                  <p>Tel: (411) 155-0050</p>
+              </div>
+      </section>
+      
+      <!-- pie de pagina-->
+      
+      <footer>
+          <div>
+              <div class="nombre">
+                  <p>JUMAPAC CORTAZAR     
+                  <a class="icon-facebook-squared" href="https://www.facebook.com/JuntaMunicipaldeAguaPotableyAlcantarillado/" target="_blank"></a>
+                  <a class="icon-twitter-squared" href="https://twitter.com/jumapac" target="_blank"></a>
+                  <a class="icon-instagram" href="https://www.instagram.com/jumapac_cortazar_/" target="_blank"></a>   
+                  www.jumapac.gob.mx
+                  </p>
+              </div>
+           </div>
+     </footer>
+     
+        
+	<script src="js/menu.js"></script>	
+	</body>
+</html>	

@@ -1,0 +1,61 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.net.URLDecoder"%>
+<%
+//Variables
+String nbResponse="";
+String idLiga ="";
+String referencia = "";
+String importe = "";
+String email="";
+String nuAut="";
+
+//Obtenemos los parámetros del request
+if (request.getParameter("nbResponse") !=null && !request.getParameter("nbResponse").isEmpty()){
+	nbResponse = request.getParameter("nbResponse");
+};
+
+if (request.getParameter("idLiga") !=null && !request.getParameter("idLiga").isEmpty()){
+	idLiga = request.getParameter("idLiga");
+};
+
+if (request.getParameter("referencia") !=null && !request.getParameter("referencia").isEmpty()){
+	referencia = request.getParameter("referencia");
+};
+
+if (request.getParameter("importe") !=null && !request.getParameter("importe").isEmpty()){
+	importe = request.getParameter("importe"); 
+};
+
+if (request.getParameter("email") !=null && !request.getParameter("email").isEmpty()){
+	email = request.getParameter("email");
+};
+
+if (request.getParameter("nuAut") !=null && !request.getParameter("nuAut").isEmpty()){
+	nuAut = request.getParameter("nuAut");
+};
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body onload="window.history.replaceState(null, null, window.location.pathname);">
+<% if (nbResponse.equalsIgnoreCase("Aprobado") && nuAut !=""){
+// Aplica la lógica de tu negocio aquí
+// por ejemplo, puedes usar 
+//  - idLiga o referencia para vincularlas a un pedido o comanda.
+//  - email para mandar un correo de agradecimiento a tu cliente.
+//  - importe para comparar el importe pagado con el que enviaste al generar la liga. 
+// NOTA: Todos los pagos aprobados cuentan con un número de autorizacion nuAut
+%>
+<h1>¡Gracias por tu compra por <%=importe%>!</h1>
+<p>En breve recibirás un correo a <%=email%></p><%
+} else if (nbResponse.equalsIgnoreCase("Rechazado")){
+// Aplica la lógica de tu negocio aquí
+%>
+<h1>Lo sentimos, tu pago por <%=importe%> ha sido rechazado por tu banco.</h1>
+<%} else {%>
+<h1>Lo sentimos, no podemos procesar la respuesta</h1>
+<%} %>
+</body>
+</html>

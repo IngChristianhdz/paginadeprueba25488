@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Alta de Usuarios</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        
+         <link rel="shortcut icon" type="image/png" href="https://www.jumapac.gob.mx/imagenes/LJ.png">
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="stylesheet" href="css/estilo_menu.css">
+        <link rel="stylesheet" href="css/estilo_banner.css">
+        <link rel="stylesheet" href="css/estilo_piepag.css">
+        <link rel="stylesheet" href="css/alta.css">		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		
+       <script type="text/javascript" src="js/modernizr.custom.46884.js"/></script>
+       <script src="https://use.fontawesome.com/e0d1a70838.js"></script>
+       
+        <script src="js/menu.js"></script>
+		
+	</head>
+
+<body>
+	
+ 	 <!--menu-->
+	<header>
+      
+          <img class="logo" src="imagenes/logo_vedaelectoral.jpg" alt="" width="50px" height="50px">
+          <input type="checkbox" id="btn-menu">
+          <label class="icon-menu" for="btn-menu"></label>
+          <nav class="menu">
+              <ul>
+                
+                  <li><a href="index.html">INICIO</a></li>
+                  <li class="submenu"><a href="cuenta.php">PAGO</a>
+                  </li>
+                  <li class="submenu"><a href="institucionalidad.html">¿QUIENES SOMOS?</a>
+                  </li>
+                  <li class="submenu"><a href="tramites_servicios.html">TRAMITES Y SERVICIOS</a>
+                  </li>
+                  <li class="submenu"><a href="cultura.html">CULTURA DEL AGUA</a>
+                  </li>
+                  <li class="submenu"><a href="saneamiento.html">SANEAMIENTO</a>
+                  </li>
+                  <li class="submenu"><a href="transparencia.html">TRANSPARENCIA</a>
+                  </li>
+              </ul>
+          </nav>
+    </header>
+    
+    <!--contenido-->
+    <main>
+    
+    <!--banner-->        
+        <section id="banner">
+               <div class="contenedor">
+                   <img id="logo" src="imagenes/encabezados/banner_pagoenlinea.png" alt="">
+               </div>
+        </section>
+  
+         
+    <section id="label_sup">
+           <div class="formulario__titulo1">
+             <h2> REGISTRO DE USUARIOS</h2>
+           </div>
+        
+    </section>
+    
+    <!--contenido-->
+     <section id="contenido">
+         <div class="contenedor">
+             <form class="formulario" id="formulario" method="post" onsubmit="return revisar();">
+             
+                <div id="alert"> </div>
+                <br>
+                      
+                <input type="text" class="formulario__input" id="nombre"   placeholder="NOMBRE" >
+                
+                <input type="text" class="formulario__input"  id="domicilio"   placeholder="DOMICILIO (CALLE/ NUMERO/COLONIA)" >
+
+                <div id="sex" >
+                  SEXO: 
+                  <select id="select2" name="select2" >
+                      <option value="" disabled selected> Selecciona una opcion </option>
+                      <option  id="sexo" value="femenino"> Femenino </option>
+                      <option  id="sexo" value="masculino"> Masculino </option>
+                   </select>
+                 </div> 
+                
+                <input type="text" class="formulario__input" id="ciudad"  placeholder="CIUDAD" >
+                
+                <div id="edo" >
+                  ESTADO: 
+                  <select id="select3" name="select3">
+                      <option value="" disabled selected> Selecciona una opcion </option>
+                      <option id="estado" value="aguascalientes">AGUASCALIENTES</option>
+                      <option id="estado" value="baja california norte">BAJA CALIFORNIA NORTE</option>
+                      <option id="estado" value="baja california sur">BAJA CALIFORNIA SUR</option>
+                      <option id="estado" value="campeche">CAMPECHE</option>
+                      <option id="estado" value="chiapas">CHIAPAS</option>
+                      <option id="estado" value="chihuahua">CHIHUAHUA</option>
+                      <option id="estado" value="coahuila">COAHUILA</option>
+                      <option id="estado" value="colima">COLIMA</option>
+                      <option id="estado" value="df">DISTRITO FEDERAL</option>
+                      <option id="estado" value="durango">DURANGO</option>    
+                      <option id="estado" value="estado mexico">ESTADO DE MÉXICO</option>
+                      <option id="estado" value="guanajuato">GUANAJUATO</option>
+                      <option id="estado" value="guerrero">GUERRERO</option>
+                      <option id="estado" value="hidalgo">HIDALGO</option>
+                      <option id="estado" value="jalisco">JALISCO</option>
+                      <option id="estado" value="michoacan">MICHOACÁN</option>
+                      <option id="estado" value="morelos">MORELOS</option>
+                      <option id="estado" value="nayarit">NAYARIT</option>
+                      <option id="estado" value="nuevo leon">NUEVO LEÓN</option>
+                      <option id="estado" value="oaxaca">OAXACA</option>
+                      <option id="estado" value="puebla">PUEBLA</option>
+                      <option id="estado" value="queretaro">QUERÉTARO</option>
+                      <option id="estado" value="quintana roo">QUINTANA ROO</option>
+                      <option id="estado" value="san luis potosi">SAN LUIS POTOSÍ</option>
+                      <option id="estado" value="sinaloa">SINALOA</option>
+                      <option id="estado" value="sonora">SONORA</option>
+                      <option id="estado" value="tabasco">TABASCO</option>
+                      <option id="estado" value="tamaulipas">TAMAULIPAS</option>
+                      <option id="estado" value="tlaxcala">TLAXCALA</option>
+                      <option id="estado" value="veracruz">VERACRUZ</option>
+                      <option id="estado" value="yucatan">YUCATÁN</option>
+                      <option id="estado" value="zacatecas">ZACATECAS</option>
+                   </select>
+                 </div> 
+                
+                <input type="tel" class="formulario__input" id="celular" title="Introduce un numero de 10 digitos, ejem: ###-#######" placeholder="CELULAR" >
+                
+                <input type="tel" class="formulario__input" id="telefono" title="Introduce un numero de 10 digitos, ejem: ###-#######" placeholder="TELEFONO" >
+
+                <input type="email" class="formulario__input" id="correo" title="Este sera tu usuario para iniciar sesion"  placeholder="CORREO" >  <div id="result_correo"> </div>
+               
+
+                <input type="text" class="formulario__input" id="cuenta" title="Se encuentra en la parte superior izquierda de tu recibo" placeholder="NUMERO DE CUENTA" ><a href="imagenes/Guia recibo.jpg" target="_blank"><img id="signo" src="imagenes/signo2.png"></a> <div id="result-cuenta"> </div>
+                
+                <input type="text" class="formulario__input" id="reparto" title="Se encuentra del lado derecho de tu recibo" placeholder="REPARTO" > <a href="imagenes/Guia recibo.jpg" target="_blank"><img id="signo2" src="imagenes/signo2.png"></a> <div id="result-reparto"> </div>
+
+               <div id="ojito">
+                    <input type="password" class="formulario__input" id="contra" title="Esta sera tu contraseña para iniciar sesion y debe contener al menos 1 Mayuscula, 1 Minuscula, 1 Numero, 1 Caracter especial y debe ser de por lo menos 8 caracteres" onkeypress="javascrip:validador();"  placeholder="CONTRASEÑA" > 
+                    <button id="show" type="button" onclick="mostrarContrasena()">Mostrar</button>
+                    <span id="mensaje">  </span>  
+               </div>        
+               <div id="ojito2">                
+                    <input type="password" class="formulario__input" id="contra2" onkeypress="javascrip:validador2();" placeholder="CONFIRMAR CONTRASEÑA" >
+                     <button id="show2" type="button" onclick="mostrarContrasena2()">Mostrar</button>
+                     <span id="mensaje2">  </span>
+                </div>                        
+               <div id="cuestion" >
+                  PREGUNTA SECRETA:
+                  <select id="select1" name="select1">
+                      <option value="" disabled selected> Selecciona una opcion </option>
+                      <option  id="pregunta" value="mascota"> El nombre de mi mascota es? </option>
+                      <option  id="pregunta" value="ciudad"> Mi ciudad de origen es?</option>
+                      <option  id="pregunta" value="postre"> Mi postre favorito es?</option>
+                      <option  id="pregunta" value="deporte"> Mi deporte favorito es?</option>
+                  </select>
+                 </div> 
+                <input type="text" class="formulario__input" id="respuesta"  placeholder="RESPUESTA" >
+               
+                <div id="chec"><input  type="checkbox"  id="terminos"  >&nbsp; &nbsp;<a class="termino">ACEPTA TERMINOS Y CONDICIONES</a> </div>
+                <input  class="formulario__submit" name="enviar" type="submit" id="enviar" >
+                <input type="hidden" name="resultado">
+                             
+	         </form>
+            <!--<div class="modal_contenedor">
+              <div class="modal modal_cerrar">
+                <p class="cerrar"> X </p>
+                <small id="small">Debes ingresar los datos</small><br>
+             </div> -->
+             <script
+              src="https://code.jquery.com/jquery-3.5.1.js"
+              integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+              crossorigin="anonymous"></script>
+	         <script src="js/main.js"></script>     
+
+         </div>
+     </section>
+     
+      
+    </main>
+    
+	<!-- direccion-->
+      
+      <section>
+          <div class="direccion">
+                  <p> Calzada Ing. Antonio Madrazo #600, Zona Centro, C.P. 38300 Cortazar Gto. </p>
+                  <p>Tel: (411) 155-0050</p>
+              </div>
+      </section>
+      
+   <!-- pie de pagina-->
+      
+      <footer>
+          <div>
+              <div class="nombre">
+                  <p>JUMAPAC CORTAZAR     
+                  <a class="icon-facebook-squared" href="https://www.facebook.com/JuntaMunicipaldeAguaPotableyAlcantarillado/" target="_blank"></a>
+                  <a class="icon-twitter-squared" href="https://twitter.com/jumapac" target="_blank"></a>
+                  <a class="icon-instagram" href="https://www.instagram.com/jumapac_cortazar_/" target="_blank"></a>   
+                  www.jumapac.gob.mx 
+                  </p>
+              </div>
+           </div>
+            
+     </footer>
+     
+        
+	<script src="js/menu.js"></script>	
+	</body>
+</html>	

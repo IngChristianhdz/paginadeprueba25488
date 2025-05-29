@@ -1,0 +1,26 @@
+body{
+    font-family:Arial, sans-serif;
+}
+
+.p1 #a{
+  font-size: 40px;
+  font-weight: bold;
+  color: blue;  
+  text-align: justify;
+    
+}
+
+.p1:first-letter{
+    margin-left: 20px;
+}
+
+.p1, .p2, .p3,.p4,.p5, .p6, .p7, .p8, .p9, .p10{
+   text-align: justify; 
+   margin: 20px 40px;    
+}
+
+.lista{
+  list-style-image: url("https://jumapac.gob.mx/imagenes/gota2.jpg");
+  margin: 40px 40px;    
+}
+
